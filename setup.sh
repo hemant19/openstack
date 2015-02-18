@@ -86,7 +86,6 @@ EOF
 else
 	echo;
 	read -p "Enter the URL given to you from the controller setup: " sprungeurl
-	curl $sprungeurl > setuprc
 
 # don't unindent!
 # tack on the IP address for the compute rig
