@@ -100,6 +100,8 @@ else
 	echo;
 	read -p "Please provide the setuprc file from controller install... then press Y :  " -n 2 -r
 
+	
+
 # don't unindent!
 # tack on the IP address for the compute rig
 cat >> setuprc <<EOF
