@@ -15,6 +15,19 @@ then
 	echo;
 	echo "#######################################################################################################"
 	echo;
+   exit 1
+fi
+
+apt-get update -y
+apt-get install curl -y
+apt-get install python-pip -y
+
+echo "#################################################################################################
+
+System updated.  Now run './openstack_setup.sh' to run the system setup.
+
+#################################################################################################
+"
 	exit
 fi
 
@@ -85,8 +98,7 @@ EOF
 
 else
 	echo;
-	read -p "Enter the URL given to you from the controller setup: " sprungeurl
-	curl $sprungeurl > setuprc
+	read -p "Please provide the setuprc file from controller install... then press Y :  " -n 2 -r
 
 # don't unindent!
 # tack on the IP address for the compute rig
@@ -98,9 +110,18 @@ EOF
 	echo;
 	echo "##########################################################################################"
 	echo;
-	echo "Setup configuration complete.  Continue the setup by doing a './openstack_cinder.sh'."
+	echo "Setup configuration complete.  Continue the setup by doing a './cinder.sh'."
 	echo;
 	echo "##########################################################################################"
 	echo;
 	exit
 fi
+
+
+echo;
+echo "##########################################################################################"
+echo;
+echo "Setup configuration complete.  Continue the setup by doing a './mysql.sh'."
+echo;
+echo "##########################################################################################"
+echo;

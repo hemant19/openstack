@@ -6,15 +6,18 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-#-------------Update your computer----------------#
-apt-get update
-apt-get dist-upgrade
+apt-get update -y
+apt-get install curl -y
+apt-get install python-pip -y
+apt-get install ntp -y
 
-#-----Install all the basic services required---------#
-apt-get install ntp rabbitmq-server
+echo "#################################################################################################
 
-#-----------------Load Variables---------------------#
-sh setup.sh
+System updated.
+(Optional)You may add faster ntp mirrors
+Now run './openstack_setup.sh' to run the system setup.
 
-#---------Change rabbitmq password--------------------#
-rabbitmqctl change_password guest $RABBIT_PASS
+#################################################################################################
+"
+
+exit
