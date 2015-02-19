@@ -65,21 +65,6 @@ rabbit_password=guest
 # SCHEDULER
 compute_scheduler_driver=nova.scheduler.filter_scheduler.FilterScheduler
 
-# NETWORK
-network_manager=nova.network.manager.FlatDHCPManager
-force_dhcp_release=True
-dhcpbridge_flagfile=/etc/nova/nova.conf
-dhcpbridge=/usr/bin/nova-dhcpbridge
-firewall_driver=nova.virt.libvirt.firewall.IptablesFirewallDriver
-my_ip=$managementip
-public_interface=br100
-vlan_interface=$rignic
-flat_network_bridge=br100
-flat_interface=$rignic
-dnsmasq_config_file=/etc/nova/dnsmasq-nova.conf
-fixed_range=''
-enable_ipv6=False
-
 # GLANCE
 image_service=nova.image.glance.GlanceImageService
 glance_api_servers=$managementip:9292

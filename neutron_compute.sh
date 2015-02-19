@@ -20,7 +20,7 @@ lock_path = $state_path/lock
 
 rpc_backend = neutron.openstack.common.rpc.impl_kombu
 rabbit_host = controller
-rabbit_password = $MY_PASSWORD
+rabbit_password = guest
 
 auth_strategy = keystone
 
