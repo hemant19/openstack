@@ -48,12 +48,12 @@ logdir=/var/log/nova
 
 # STATE
 auth_strategy=keystone
-state_path=/var/lib/nova
-lock_path=/run/lock/nova
-rootwrap_config=/etc/nova/rootwrap.conf
+# state_path=/var/lib/nova
+# lock_path=/run/lock/nova
+# rootwrap_config=/etc/nova/rootwrap.conf
 
 # PASTE FILE
-api_paste_config=/etc/nova/api-paste.ini
+# api_paste_config=/etc/nova/api-paste.ini
 
 # RABBIT
 rabbit_host=$managementip
@@ -63,46 +63,46 @@ rabbit_userid=guest
 rabbit_password=guest
 
 # SCHEDULER
-compute_scheduler_driver=nova.scheduler.filter_scheduler.FilterScheduler
+# compute_scheduler_driver=nova.scheduler.filter_scheduler.FilterScheduler
 
 # GLANCE
-image_service=nova.image.glance.GlanceImageService
-glance_api_servers=$managementip:9292
-glance_host=$managementip
+# image_service=nova.image.glance.GlanceImageService
+# glance_api_servers=$managementip:9292
+# glance_host=$managementip
 
 # CINDER
-volume_api_class=nova.volume.cinder.API
-osapi_volume_listen_port=5900
-snapshot_image_format=qcow2
-iscsi_helper=tgtadm
+# volume_api_class=nova.volume.cinder.API
+# osapi_volume_listen_port=5900
+# snapshot_image_format=qcow2
+# iscsi_helper=tgtadm
 
 # COMPUTE
-network_api_class = nova.network.api.API
-security_group_api = nova
-compute_manager=nova.compute.manager.ComputeManager
-connection_type=libvirt
-compute_driver=libvirt.LibvirtDriver
-libvirt_type=kvm
-libvirt_inject_key=false
-root_helper=sudo nova-rootwrap /etc/nova/rootwrap.conf
-remove_unused_base_images=true
-remove_unused_resized_minimum_age_seconds=3600
-remove_unused_original_minimum_age_seconds=3600
-checksum_base_images=false
-start_guests_on_host_boot=true
-resume_guests_state_on_host_boot=true
-volumes_path=/var/lib/nova/volumes
+# network_api_class = nova.network.api.API
+# security_group_api = nova
+# compute_manager=nova.compute.manager.ComputeManager
+# connection_type=libvirt
+# compute_driver=libvirt.LibvirtDriver
+# libvirt_type=kvm
+# libvirt_inject_key=false
+# root_helper=sudo nova-rootwrap /etc/nova/rootwrap.conf
+# remove_unused_base_images=true
+# remove_unused_resized_minimum_age_seconds=3600
+# remove_unused_original_minimum_age_seconds=3600
+# checksum_base_images=false
+# start_guests_on_host_boot=true
+# resume_guests_state_on_host_boot=true
+# volumes_path=/var/lib/nova/volumes
 
 # QUOTAS
-quota_security_groups=50
-quota_fixed_ips=40
-quota_instances=20
-force_config_drive=false
-cpu_allocation_ratio=16.0
-ram_allocation_ratio=1.5
+# quota_security_groups=50
+# quota_fixed_ips=40
+# quota_instances=20
+# force_config_drive=false
+# cpu_allocation_ratio=16.0
+# ram_allocation_ratio=1.5
 
 # KEYSTONE
-keystone_ec2_url=http://$managementip:5000/v2.0/ec2tokens
+# keystone_ec2_url=http://$managementip:5000/v2.0/ec2tokens
 
 # VNC CONFIG
 my_ip=$managementip
@@ -115,21 +115,21 @@ vncserver_listen=$managementip
 vncserver_proxyclient_address=$managementip
 
 # OTHER
-osapi_max_limit=1000
+# osapi_max_limit=1000
 
 # APIs
-enabled_apis=ec2,osapi_compute,metadata
-osapi_compute_extension = nova.api.openstack.compute.contrib.standard_extensions
-ec2_workers=4
-osapi_compute_workers=4
-metadata_workers=4
-osapi_volume_workers=4
-osapi_compute_listen=$managementip
-osapi_compute_listen_port=8774
-ec2_listen=$managementip
-ec2_listen_port=8773
-ec2_host=$managementip
-ec2_private_dns_show_ip=True
+# enabled_apis=ec2,osapi_compute,metadata
+# osapi_compute_extension = nova.api.openstack.compute.contrib.standard_extensions
+# ec2_workers=4
+# osapi_compute_workers=4
+# metadata_workers=4
+# osapi_volume_workers=4
+# osapi_compute_listen=$managementip
+# osapi_compute_listen_port=8774
+# ec2_listen=$managementip
+# ec2_listen_port=8773
+# ec2_host=$managementip
+# ec2_private_dns_show_ip=True
 
 [database]
 connection = mysql://nova:$password@$managementip/nova
